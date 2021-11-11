@@ -21,5 +21,5 @@
 - localizer
   - parameters: baselink2lidar_trans (float array), baselink2lidar_rot (float array), result_save_path (string)
   - subscribe: /map (sensor_msgs::PointCloud2), /lidar_points (sensor_msgs::PointCloud2), /gps (geometry_msgs::PointStamped)
-  - publish: N/A
+  - publish: /lidar_pose (geometry_msgs::PoseStamped), /transformed_points (sensor_msgs::PointCloud2)
   - output: result poses as csv file saved in `result_save_path`
