@@ -1,0 +1,8 @@
+mapFrame: "world"
+lidarFrame: "velodyne"
+
+baselink2lidar_trans: [ 0.46, 0.0, 3.46 ]
+baselink2lidar_rot: [ -0.0051505, 0.018102, -0.019207, 0.99964]
+
+scanLeafSize: 1.0
+mapLeafSize: 1.0

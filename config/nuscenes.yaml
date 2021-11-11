@@ -1,0 +1,8 @@
+mapFrame: "world"
+lidarFrame: "nuscenes_lidar"
+
+baselink2lidar_trans: [ 0.985792994499, 0.0, 1.84019005299 ]
+baselink2lidar_rot: [ -0.0153009936601, 0.0173974519781, -0.707084648946, 0.706749253613]
+
+scanLeafSize: 0.4
+mapLeafSize: 0.4

@@ -1,0 +1,19 @@
+<launch>
+
+    <arg name="save_path" default="$(find baseline_localizer)/results/results_3.csv" />
+    <param name="use_sim_time" value="true" />
+
+    <node pkg="rviz" type="rviz" name="display_result" output="screen" args="-d $(find baseline_localizer)/config/nuscenes.rviz" />
+
+    <node name="map_publisher" pkg="map_tile_loader" type="map_publisher" output="screen">
+        <!-- <remap from="/query_pose" to="/lidar_pose"/> -->
+        <param name="map_path" type="string" value="/home/biomotion/nuscenes_maps" />
+    </node>
+
+    <node pkg="baseline_localizer" type="localizer" name="localizer" output="screen">
+        <rosparam file="$(find baseline_localizer)/config/nuscenes.yaml" command="load" />
+        <rosparam param="result_save_path" subst_value="True">$(arg save_path)</rosparam>
+    </node>
+    
+
+</launch>

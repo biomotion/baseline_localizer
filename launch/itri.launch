@@ -1,0 +1,16 @@
+<launch>
+
+    <arg name="save_path" default="$(find baseline_localizer)/results/results_1.csv" />
+    <param name="use_sim_time" value="true" />
+
+    <node pkg="rviz" type="rviz" name="display_result" output="screen" args="-d $(find baseline_localizer)/config/itri.rviz" />
+
+    <node pkg="baseline_localizer" type="pub_map" name="pub_map" output="screen" />
+
+    <node pkg="baseline_localizer" type="localizer" name="localizer" output="screen">
+        <rosparam file="$(find baseline_localizer)/config/itri.yaml" command="load" />
+        <rosparam param="result_save_path" subst_value="True">$(arg save_path)</rosparam>
+    </node>
+    
+
+</launch>
